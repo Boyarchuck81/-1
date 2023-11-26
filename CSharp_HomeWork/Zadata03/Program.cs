@@ -8,13 +8,8 @@
 */ 
 
 
-Console.Write("Введите число от 10 до 99: ");
-int number = int.Parse(Console.ReadLine()!);
-while (number < 10 || number > 99)
-{
-    Console.Write("Вы ввели неверное число!\Введите число от 10 до 99: ");
-    number = int.Parse(Console.ReadLine()!);
-}
+int number = new Random().Next(10,99);
+System.Console.WriteLine(number);
 int first = number / 10;
 int last = number % 10;
 if (first>last)
