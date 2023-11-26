@@ -2,6 +2,10 @@
 /*
 Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0
 и выдаёт номер координатной четверти плоскости, в которой находится эта точка.
+x=2; y=3 -> 1 
+x=-5; y=3 -> 2
+x=-3; y=-2 -> 3
+x=4; y=-2 -> 4
 */ 
 
 Console.WriteLine("Введите координаты точки. X: ");
@@ -12,4 +16,4 @@ if (userX>0 && userY>0) System.Console.WriteLine("Точка находится 
 if (userX<0 && userY>0) System.Console.WriteLine("Точка находится во второй четверти");
 if (userX<0 && userY<0) System.Console.WriteLine("Точка находится в третьей четверти");
 if (userX>0 && userY<0) System.Console.WriteLine("Точка находится в четвертой четверти");
-if (userX==0 || userY==0) System.Console.WriteLine("Точка не находится на на одной координатной четверти");
+if (userX==0 || userY==0) System.Console.WriteLine("Точка не находится ни на одной координатной четверти");
