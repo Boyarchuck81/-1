@@ -1,0 +1,14 @@
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\bin\Debug\net7.0\Zadata02.exe
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\bin\Debug\net7.0\Zadata02.deps.json
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\bin\Debug\net7.0\Zadata02.runtimeconfig.json
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\bin\Debug\net7.0\Zadata02.dll
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\bin\Debug\net7.0\Zadata02.pdb
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.GeneratedMSBuildEditorConfig.editorconfig
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.AssemblyInfoInputs.cache
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.AssemblyInfo.cs
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.csproj.CoreCompileInputs.cache
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.dll
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\refint\Zadata02.dll
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.pdb
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\Zadata02.genruntimeconfig.cache
+D:\ОБУЧЕНИЕ\C# Educacion\CSharp_HomeWork\Zadata02\obj\Debug\net7.0\ref\Zadata02.dll
