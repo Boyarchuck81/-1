@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C# Educacion", "C# Educacion.csproj", "{1C88FE47-52CE-44B7-B494-54E44A71CD33}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp Lection", "CSharp Lection", "{864E1A02-005A-4DDD-85AD-83EEF6588BE9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp", "CSharp Lection\Test001 Квадрат числа\CSharp.csproj", "{52464DC4-2B43-4AE8-B765-A07D868DD057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1C88FE47-52CE-44B7-B494-54E44A71CD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C88FE47-52CE-44B7-B494-54E44A71CD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C88FE47-52CE-44B7-B494-54E44A71CD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C88FE47-52CE-44B7-B494-54E44A71CD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52464DC4-2B43-4AE8-B765-A07D868DD057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52464DC4-2B43-4AE8-B765-A07D868DD057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52464DC4-2B43-4AE8-B765-A07D868DD057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52464DC4-2B43-4AE8-B765-A07D868DD057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52464DC4-2B43-4AE8-B765-A07D868DD057} = {864E1A02-005A-4DDD-85AD-83EEF6588BE9}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CD6869F5-BA89-4660-ADB5-F8B6BD0A3D0C}
+		SolutionGuid = {1B376D60-FD4F-4C4A-A597-82057F286FC7}
 	EndGlobalSection
 EndGlobal
