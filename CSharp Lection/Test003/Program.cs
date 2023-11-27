@@ -8,7 +8,9 @@
 //int numberB = 5;
 //Console.WriteLine(numberA + numberB);
 
-int numberA = 28;
-int numberB = 5;
+int numberA = new Random().Next(1, 10);
+Console.WriteLine(numberA);
+int numberB = new Random().Next(1, 10);
+Console.WriteLine(numberA);
 int result = numberA + numberB;
 Console.WriteLine(result);
