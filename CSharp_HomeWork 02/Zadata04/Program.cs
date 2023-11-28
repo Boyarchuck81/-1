@@ -1,26 +1,65 @@
 ﻿// See https://aka.ms/new-console-template for more information
-/*Задача 4: Напишите программу, которая на вход принимает натуральное число N, а на выходе показывает его цифры через запятую.
-568 => 5,6,8
-8 => 8
-9542 => 9,5,4,2
+/* 39. Напишите программу, которая перевернёт одномерный массив (последний элемент будет на первом месте, а первый -
+ на последнем и т.д.)
+
+[1 2 3 4 5] -> [5 4 3 2 1]
+[6 7 3 6] -> [6 3 7 6]
+Комментарий: эту задачу можно решить 2 способами: 
+1) менять числа местами в исходном массиве; 
+2) создать новый массив и в него записать перевёрнутый исходный массив по элементам.
+
+
+Задача 4**(не обязательно): Дано натуральное число в диапазоне от 1 до 100 000. Создайте массив, состоящий из цифр 
+этого числа. Старший разряд числа должен располагаться на 0-м индексе массива, младший – на последнем. Размер массива
+ должен быть равен количеству цифр.
 */ 
 
-Console.Write("Введите натуральное число N: ");
-int N = Convert.ToInt32(Console.ReadLine());
+int Prompt(string massage)
 {
-while (N > 0)
+    System.Console.Write(massage);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[] GenerateArray(int size, int minValue, int maxValue)
 {
-int currentDigit = N % 10;
-N /= 10;
-if (N > 0)
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return array;
+}
+
+int[] Reverse(int[] array)
 {
-Console.Write(currentDigit + ",");
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int temp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = temp;
+    }
+    return array;
 }
-else
+
+void PrintArray(int[] arrayOne)
 {
-Console.WriteLine(currentDigit);
+    System.Console.WriteLine("Массив:");
+    for (int i = 0; i < arrayOne.Length; i++)
+    {
+        System.Console.Write(arrayOne[i]);
+        if (i < arrayOne.Length - 1)
+            System.Console.Write("\t");
+    }
+    System.Console.WriteLine();
 }
-}
-}
+
+int length = Prompt("Длина массива: ");
+int min = Prompt("Минимальное значение: ");
+int max = Prompt("Максимальное значене: ");
+int[] array = GenerateArray(length, min, max);
+PrintArray(array);
+PrintArray(Reverse(array));
+
 
 
