@@ -1,42 +1,44 @@
 ﻿
-/*Задача1. Задайте одномерный массив из 10 целых чисел от 1 до 100. Найдите количество элементов массива, значения которых лежат в отрезке [20,90].
+/*Задача1. Напишите программу, которая бесконечно
+запрашивает целые числа с консоли. Программа
+завершается при вводе символа ‘q’ или при вводе
+числа, сумма цифр которого четная. 
+5 12 16 q [STOP]
+3 45 342 15 [STOP]
 */
 
 Console.Clear();
-int size = 10;
-int[] array = new int[size];
-int[] GetArray(int size)
+while (true)
 {
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(1, 101);
+    Console.WriteLine("Введите любое целое число. Программа завершиться словом 'STOP' при вводе числа, сумма цифр которого четная, или при введении 'q'");
+    string num = Console.ReadLine()!;
+    if (num.ToLower() == "q") {
+        Console.WriteLine("STOP");
+        break;
     }
-    return array;
-}
-void PrintArray(int[] arr)
-{
-    System.Console.Write("[");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        System.Console.Write(arr[i]);
-        if (i < arr.Length - 1)
-            System.Console.Write(", ");
-    }
-    System.Console.WriteLine("]");
-}
-int CountGetArray(int[] arr)
-    {
-        int count = 0;
-        for (int i = 0; i < arr.Length; i++)
-        {
-            if (arr[i] >= 20 && arr[i] <= 90)
-            {
-                count++;
-            }
+      if (int.TryParse(num, out int number))
+      {
+        int numSum = CDS(number);
+        if (numSum % 2 == 0) {
+            Console.WriteLine($"STOP");
+            break;
         }
-        return count;
+        else {
+            Console.Write(" ");
+        }
     }
-int[] userArray = GetArray(size);
-int countArray = CountGetArray(userArray);
-PrintArray(userArray);
-System.Console.WriteLine("Количество элементов массива в отрезке :" + countArray);
+    else {
+    Console.WriteLine("Внимательно читайте условие! Попробуйте еще.");
+    }
+}
+
+int CDS(int num) // CDS = CalculateDigitSum
+{
+    int sum = 0;
+    while (num != 0)
+    {
+        sum += num % 10; // Получаем последнюю цифру числа и добавляем её к сумме.
+        num /= 10; // Удаляем последнюю цифру из числа.
+    }
+    return sum;
+}
