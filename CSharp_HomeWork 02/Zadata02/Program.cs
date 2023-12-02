@@ -17,3 +17,25 @@ if (userX<0 && userY>0) System.Console.WriteLine("Точка находится 
 if (userX<0 && userY<0) System.Console.WriteLine("Точка находится в третьей четверти");
 if (userX>0 && userY<0) System.Console.WriteLine("Точка находится в четвертой четверти");
 if (userX==0 || userY==0) System.Console.WriteLine("Точка не находится ни на одной координатной четверти");
+
+//Идеальное решение
+using System;
+class Program
+{
+static void Main()
+{
+Console.Write("Введите координаты точки X и Y через пробел:");string[] coordinates = Console.ReadLine().Split(' ');
+int x = Convert.ToInt32(coordinates[0]);
+int y = Convert.ToInt32(coordinates[1]);
+if (x > 0 && y > 0)
+Console.WriteLine("1");
+else if (x < 0 && y > 0)
+Console.WriteLine("2");
+else if (x < 0 && y < 0)
+Console.WriteLine("3");
+else if (x > 0 && y < 0)
+Console.WriteLine("4");
+else
+Console.WriteLine("Точка находится на оси координат");
+}
+}
