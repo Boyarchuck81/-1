@@ -32,11 +32,9 @@ while (true)
     }
 }
 
-int CDS(int num) // CDS = CalculateDigitSum
-{
+int CDS(int num) // CDS = CalculateDigitSum{
     int sum = 0;
-    while (num != 0)
-    {
+    while (num != 0) {
         sum += num % 10; // Получаем последнюю цифру числа и добавляем её к сумме.
         num /= 10; // Удаляем последнюю цифру из числа.
     }

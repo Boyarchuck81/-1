@@ -1,63 +1,52 @@
-﻿/* Задача3. Задайте массив из вещественных чисел с ненулевой дробной частью. Найдите разницу между максимальным и минимальным элементов массива.
+﻿/* Задача3. Напишите программу, которая перевернёт
+одномерный массив (первый элемент станет
+последним, второй – предпоследним и т.д.)
+[1 3 5 6 7 8] => [8 7 6 5 3 1]
 */ 
 
-System.Console.WriteLine("Задайте размер массива:");
-int size = Convert.ToInt32(Console.ReadLine());
-double[] array = new double[size];
-Random arr = new Random();
-double[] GetArray(int size)
+int Prompt(string massage)
 {
+    System.Console.Write(massage);
+    int result = Convert.ToInt32(Console.ReadLine());
+    return result;
+}
+
+int[] GenerateArray(int size, int minValue, int maxValue)
+{
+    int[] array = new int[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = Math.Round((arr.NextDouble() * (10 - 1) + 1), 2);
+        array[i] = new Random().Next(minValue, maxValue + 1);
     }
     return array;
 }
-void PrintArray(double[] arr)
-{
 
-    for (int i = 0; i < arr.Length; i++)
+int[] Reverse(int[] array)
+{
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        System.Console.Write(arr[i]);
-        if (i < arr.Length - 1)
+        int temp = array[i];
+        array[i] = array[array.Length - 1 - i];
+        array[array.Length - 1 - i] = temp;
+    }
+    return array;
+}
+
+void PrintArray(int[] arrayOne)
+{
+    System.Console.WriteLine("Массив:");
+    for (int i = 0; i < arrayOne.Length; i++)
+    {
+        System.Console.Write(arrayOne[i]);
+        if (i < arrayOne.Length - 1)
             System.Console.Write("\t");
     }
-
-}
-double FindMax(double[] array)
- 
-{
-    double max = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] > max)
-            max = array[i];
-    }
-    return max;
-}
-double FindMin(double[] array)
- 
-{
-    double min = array[0];
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] < min)
-            min = array[i];
-    }
-    return min;
+    System.Console.WriteLine();
 }
 
-double CalcDifferenceBetweenMaxMin(double[] array)
-    {
-        double max = FindMax(array);
-        double min = FindMin(array);
-        double between = max - min;
-        return between;
-    }
-double[] userArray = GetArray(size);
-PrintArray(userArray);
-Console.WriteLine();
- double maxNum = FindMax(userArray);
-double minNum = FindMin(userArray);
-double betweenNum = CalcDifferenceBetweenMaxMin(userArray);
- Console.WriteLine($"Разность между max и min элементом = {betweenNum}");
+int length = Prompt("Длина массива: ");
+int min = Prompt("Минимальное значение: ");
+int max = Prompt("Максимальное значене: ");
+int[] array = GenerateArray(length, min, max);
+PrintArray(array);
+PrintArray(Reverse(array));

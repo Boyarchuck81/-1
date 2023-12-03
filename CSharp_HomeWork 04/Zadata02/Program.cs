@@ -1,33 +1,32 @@
-﻿/*Задача2. Задайте массив на 10 целых чисел. Напишите программу, которая определяет количество чётных чисел в массиве.
+﻿/*Задача2. Задайте массив заполненный случайными
+трёхзначными числами. Напишите программу,
+которая покажет количество чётных чисел в
+массиве.
+[344 452 341 125] => 2
 */ 
 
 Console.Clear();
-int size = 10;
+System.Console.WriteLine("Задай размер массива:");
+int size = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[size];
-int[] GetArray(int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        array[i] = new Random().Next(0, 10001);
+int[] GetArray(int size){
+    for (int i = 0; i < size; i++){
+        array[i] = new Random().Next(100, 1000);
     }
     return array;
 }
-void PrintArray(int[] arr)
-{
+void PrintArray(int[] arr){
     
-    for (int i = 0; i < arr.Length; i++)
-    {
+    for (int i = 0; i < arr.Length; i++){
         System.Console.Write(arr[i]);
         if (i < arr.Length - 1)
-            System.Console.Write("\t");
+            System.Console.Write("\t");//[5, 7, 1, 4]
     }
    
 }
-int CountEvenElements(int[]arr)
-{
+int CountEvenElements(int[]arr){
     int count = 0;
-    for (int i = 0; i <arr.Length; i++)
-    {
+    for (int i = 0; i <arr.Length; i++){
         if(arr[i]%2==0)
         count++;
     }
