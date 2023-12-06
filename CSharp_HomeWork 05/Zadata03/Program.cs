@@ -14,7 +14,7 @@ Console.WriteLine();
 NumberRowMinSumElements(matrix);
 void NumberRowMinSumElements(int[,] array)
 {
-    int minRow = 0; //Сумма минимальная в строчке
+    int minRow = 0; //Сумма минимальная в строке
     int minSumRow = 0;// номер строки минимальной
     int sumRow = 0;// Сумма строки
     for (int i = 0; i < matrix.GetLength(1); i++)

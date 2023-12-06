@@ -105,10 +105,10 @@
 782 -> 2
 918 -> 8
 */
-Console.WriteLine("Введите число: ");
-int numberA = Convert.ToInt32(Console.ReadLine());
-int result = numberA % 10;
-System.Console.WriteLine(result);
+// Console.WriteLine("Введите число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// int result = numberA % 10;
+// System.Console.WriteLine(result);
 
 
 // Семинар 1
@@ -230,6 +230,7 @@ Python(динамическая типизация данных): n = 10 -> clas
 // Console.Write(n1 + n3);
 
 // Семинар 2
+
 // Алгебра Логики(Булевская Алгебра) - 0(False) или 1(True)
 // Алфавит десятичной СС: 0 1 2 3 4 5 6 7 8 9
 // Console.Clear();
