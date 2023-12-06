@@ -601,6 +601,8 @@ a = 891 => 81
 // // name[1] - char
 // char m = '5';
 // Console.WriteLine(name[1]);
+
+
 // Напишите программу, которая принимает на вход число. Посчитайте сумму цифр этого числа
 // Console.Clear();
 // Console.Write("Введите число: ");
@@ -610,23 +612,10 @@ a = 891 => 81
 //     result += Convert.ToInt32(number[i].ToString());
 // }
 // Console.WriteLine($"Сумма цифр числа: {result}");
-// Строки
-// Ivan
-// 0123
-// Console.Clear();
-// string name = "Ivan"; // String
-// // name[1] - char
-// char m = '5';
-// Console.WriteLine(name[1]);
-// Напишите программу, которая принимает на вход число. Посчитайте сумму цифр этого числа
-// Console.Clear();
-// Console.Write("Введите число: ");
-// string number = Console.ReadLine()!; // "234567"
-// int result = 0;
-// for (int i = 0; i < number.Length; i++){
-//     result += Convert.ToInt32(number[i].ToString());
-// }
-// Console.WriteLine($"Сумма цифр числа: {result}");
+
+
+// Задача 2: Задайте массив на 10 целых чисел. 
+// Напишите программу, которая определяет количество чётных чисел в массиве.
 
 // void InputArray(int[] array){
 //     for (int i = 0; i < 10; i++){
@@ -650,7 +639,11 @@ a = 891 => 81
 // Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
 // Console.WriteLine($"Результат: {evenNumbers(array)}");
 
-// Задача4 из ДЗ
+// Задача4 из ДЗ.Дано натуральное число в диапазоне от 1 до 100 000. 
+// Создайте массив, состоящий из цифр этого числа. 
+// Старший разряд числа должен располагаться на 0-м индексе массива, 
+// младший – на последнем. Размер массива должен быть равен количеству цифр.   
+
 
 // Console.Clear();
 // int number = new Random().Next(1, 100001);
@@ -670,7 +663,9 @@ a = 891 => 81
 // }
 // Console.WriteLine($"Результат: [{string.Join(", ", array)}]");
 
-// министратор
+// Задайте двумерный массив. Найдите элементы, у которых оба
+// индекса чётные, и замените эти элементы на их квадраты.
+
 // void InputMatrix(int[,] matrix){
 //     for(int i = 0; i < matrix.GetLength(0); i++)
 //     {
@@ -850,7 +845,7 @@ a = 891 => 81
 // PrintMatrix(matrix);
 // Console.WriteLine($"Среднее арифметическое строк: [{string.Join(", ", AVG(matrix))}]");
 
-// Семинар 5
+// Семинар 6
 
 // Задание 1.
 Console.Clear();
@@ -871,6 +866,11 @@ Console.Clear();
 // Console.WriteLine(result);
 
 
+// Задание 2
+// На основе символов строки (тип string) сформировать массив
+// символов (тип char[]). Вывести массив на экран.
+// Пример
+// “Hello!” => [‘H’, ‘e’, ‘l’, ‘l’, ‘o’, ‘!’] 
 
 // Console.Clear();
 // Console.Write("Введите строку: ");
@@ -883,6 +883,13 @@ Console.Clear();
 // }
 // Console.WriteLine($"Результат: [{string.Join(" ", chars)}]");
 
+// Задание 3
+// Считать строку с консоли, состоящую из латинских
+// букв в нижнем регистре. Выяснить, сколько среди
+// введённых букв гласных.
+// Пример
+// “hello” => 2
+// “world” => 1
 
 // bool is_vowels(char el, string vowels){
 //     for (int i = 0; i < vowels.Length; i++){
@@ -905,3 +912,22 @@ Console.Clear();
 // Console.WriteLine(count);
 
 // https://learn.microsoft.com/ru-ru/dotnet/api/system.char.isupper?view=netframework-4.8
+
+bool is_vowels(char el, string vowels="aeuioy"){
+    for (int i = 0; i < vowels.Length; i++){
+        if (vowels[i] == el)
+            return true;
+    }
+    return false;
+}
+
+    
+Console.Clear();
+Console.Write("Введите строку: ");
+string initial = Console.ReadLine()!;
+int count = 0;
+for (int i = 0; i < initial.Length; i++){
+    if (is_vowels(initial[i]))
+        count++;
+}
+Console.WriteLine(count);
