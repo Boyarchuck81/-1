@@ -105,11 +105,24 @@
 782 -> 2
 918 -> 8
 */
-// Console.WriteLine("Введите число: ");
-// int numberA = Convert.ToInt32(Console.ReadLine());
-// int result = numberA % 10;
-// System.Console.WriteLine(result);
+Console.WriteLine("Введите число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+int result = numberA % 10;
+System.Console.WriteLine(result);
 
+// задача 8./*
+// Внутри класса Answer напишите метод PrintEvenNumbers, которая на вход принимает
+//  число (number), а на выходе выводит все чётные
+//  числа от 1 до number (включительно), 
+//  разделеные знаком табуляции.
+// */
+
+// Console.WriteLine("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// for (int i = 2; i <= number; i+=2)
+// {
+//     System.Console.Write(i + "\t");
+// }
 
 // Семинар 1
 
@@ -173,11 +186,11 @@ Python(динамическая типизация данных): n = 10 -> clas
 // "231" -> ["231"] -> 231 -> [231]
 
 // Задача 2.Напишите программу, которая на вход принимает целое число N, а на выходе показывает все целые числа в промежутке от -N до N.
-Примеры
-4 => -4, -3, -2, -1, 0, 1, 2, 3, 4
-2 => -2, -1, 0, 1, 2
+// Примеры
+// 4 => -4, -3, -2, -1, 0, 1, 2, 3, 4
+// 2 => -2, -1, 0, 1, 2
 
-(версия 1)
+// (версия 1)
 
 // Console.Clear();
 // Console.Write("Введите число: ");
@@ -590,9 +603,6 @@ a = 891 => 81
 // одномерный массив (первый элемент станет
 // последним, второй – предпоследним и т.д.)
 
-
-Семинар5
-
 // Строки
 // Ivan
 // 0123
@@ -913,21 +923,194 @@ Console.Clear();
 
 // https://learn.microsoft.com/ru-ru/dotnet/api/system.char.isupper?view=netframework-4.8
 
-bool is_vowels(char el, string vowels="aeuioy"){
-    for (int i = 0; i < vowels.Length; i++){
-        if (vowels[i] == el)
-            return true;
-    }
-    return false;
-}
+// bool is_vowels(char el, string vowels="aeuioy"){
+//     for (int i = 0; i < vowels.Length; i++){
+//         if (vowels[i] == el)
+//             return true;
+//     }
+//     return false;
+// }
 
     
-Console.Clear();
-Console.Write("Введите строку: ");
-string initial = Console.ReadLine()!;
-int count = 0;
-for (int i = 0; i < initial.Length; i++){
-    if (is_vowels(initial[i]))
-        count++;
-}
-Console.WriteLine(count);
+// Console.Clear();
+// Console.Write("Введите строку: ");
+// string initial = Console.ReadLine()!;
+// int count = 0;
+// for (int i = 0; i < initial.Length; i++){
+//     if (is_vowels(initial[i]))
+//         count++;
+// }
+// Console.WriteLine(count);
+// Семинар6
+
+// Рекурсия
+// Напишите программу, которая принимает от пользователя 2 числа. 
+// Необходимо сложить введенные числа, без прямого сложения.
+
+// int summa(int a, int b){
+//     if (b == 0)
+//         return a;
+//     return summa(a + 1, b - 1);
+// }
+
+
+// Console.Clear();
+// Console.Write("Введите 1-ое число: ");
+// int a = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите 2-ое число: ");
+// int b = int.Parse(Console.ReadLine()!);
+// Console.WriteLine($"Результат: {a} + {b} = {summa(a, b)}");
+
+// /*
+// a = 5 b = 3 S = summa
+
+// S(5, 3) -> S(6, 2) -> S(7, 1) -> S(8, 0) -> 8
+// */
+
+// /*
+// Задача 1.
+// Напишите программу, которая будет принимать на вход число и
+// возвращать сумму его цифр.
+// */
+
+
+// int summaCifr(int n){
+//     if (n < 10)
+//         return n;
+//     return summaCifr(n / 10) + n % 10;
+// }
+
+// /* n = 456 S = summaCifr
+// S(456) -> S(45) + 6 = 4 + 5 + 6 = 15
+//             |
+//             S(4) + 5 = 4 + 5
+//               |
+//               4
+
+
+
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// // int result = 0;
+// // while (n >= 10){ // n < 10 || n % 10 = n || n / 10 == 0
+// //     result += n % 10;
+// //     n /= 10;
+// // }
+// // Console.WriteLine(result + n);
+// Console.WriteLine(summaCifr(n));
+
+// Задача 2.
+// Задайте значение N. Напишите программу, которая выведет
+// все натуральные числа в промежутке от 1 до N.
+// */
+// string printNumbers(int n){
+//     if (n == 0) // n == 1
+//         return ""; // return "1 "
+//     return printNumbers(n - 1) + $"{n} ";
+// }
+// /*
+// n = 5 P = printNumbers
+// P(5) -> P(4) + "5 " = "1 2 3 4 " + "5 " =  "1 2 3 4 5 "
+//         |
+//         P(3) + "4 " = "1 2 3 " + "4 " = "1 2 3 4 "
+//         |
+//         P(2) + "3 " = "1 2 " + "3 " = "1 2 3 "
+//         |
+//         P(1) + "2 " = "1 " + "2 " = "1 2 "
+//         |
+//         P(0) + "1 " = "" + "1 " = "1 "
+//         |
+//         ""
+// */
+
+
+// Console.Clear();
+// Console.Write("Введите число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// Console.WriteLine(printNumbers(n));
+
+// /*
+// Задача 3
+// Считать строку с консоли, содержащую латинские буквы.
+// Вывести на экран согласные буквы этой строки.
+// */
+
+// bool checkVowels(char s){
+//     char[] c = {'e', 'u', 'i', 'y', 'a', 'o'};
+//     foreach (char el in c){
+//         if (el == s)
+//             return false;
+//     }
+//     return true;
+// }
+
+
+// string printChars(string s){
+//     if (s.Length == 0)
+//         return "";
+
+//     string s_new = String.Empty;
+//     for (int i = 0; i < s.Length - 1; i++)
+//         s_new += s[i];
+
+//     if (checkVowels(s[s.Length - 1])){
+//         return printChars(s_new) + $"{s[s.Length - 1]} ";
+//     }
+//     return printChars(s_new);
+// }
+// /*
+// s = "hello" P = printChars
+// P("hello") -> P("hell")
+//                 |
+//                 P("hel") + "l "
+//                 |
+//                 P("he") + "l "
+//                 |
+//                 P("h")
+//                 |
+//                 P("") + "h "
+//                 |
+//                 ""
+// */
+
+
+
+// Console.Clear();
+// Console.Write("Введите строку: ");
+// string initial = Console.ReadLine()!;
+// Console.WriteLine(printChars(initial));
+
+
+// using System;
+// using System.Linq;
+
+// class Program
+// {
+// static void Main()
+// {
+// Console.Write("Введите строку: ");
+// string input = Console.ReadLine();
+
+//     foreach (var c in input.Where(char.IsLetter))
+//     {
+//         if (char.IsWhiteSpace(c))
+//             continue;
+
+//         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+//             || c == 'y' || c == 'A' || c == 'E' || c == 'I' || c == 'O'
+//             || c == 'U' || c == 'Y' || (c >='J' && c <='N')
+//             || (c >='R' && c <='T') || (c >='B' && c <='K')
+//             || (c >='F' && c <='M') || c=='P' || c=='S'
+// Продолжи   
+// || c==‘V’ || c==‘W’ || c==‘X’ || c==‘Z’)
+// {
+// Console.Write©;
+// }
+// }
+// }
+// }
+
+// https://learn.microsoft.com/ru-ru/dotnet/api/system.int32.minvalue?view=net-8.0
+
