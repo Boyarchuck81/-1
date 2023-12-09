@@ -2,7 +2,7 @@
 
 //Задача 1. Напишите программу, которая принимает на вход число и выдает его квадрат/
 // System.Console.WriteLine("Введите число: "); //cw -бытрый ввызов этой команды
-// int userNamber = Convert.ToInt32(Console.ReadLine());
+// int userNamber = Convert.ToInt32(Console.ReadLine());// возможно испльзование int.Parsre
 // int result = userNamber * userNamber;
 // System.Console.WriteLine(result);
 
@@ -124,25 +124,179 @@ System.Console.WriteLine(result);
 //     System.Console.Write(i + "\t");
 // }
 
-/*
- ЗадачаНапишите программу, которая выводит случайное число из отрезка [10, 99]
+/*Домашняя работа
+ Задача9.Напишите программу, которая выводит случайное число из отрезка [10, 99]
   и показывает наибольшую цифру числа.
 78 -> 8
 12-> 2
 85 -> 8
 */ 
-int number = new Random().Next(10,100);
-System.Console.WriteLine(number);
-int first = number / 10;
-int last = number % 10;
-if (first>last)
-{
-    System.Console.WriteLine("Наибольшая " + first);
-}
-else
-{
-     System.Console.WriteLine("Наибольшее " + last);
-}
+// int number = new Random().Next(10,100);
+// System.Console.WriteLine(number);
+// int first = number / 10;
+// int last = number % 10;
+// if (first>last)
+// {
+//     System.Console.WriteLine("Наибольшая " + first);
+// }
+// else
+// {
+//      System.Console.WriteLine("Наибольшее " + last);
+// }
+// if (first == last){
+//     System.Console.WriteLine("Цифры равны между собой");
+// }
+
+/*
+Задача 10: Напишите программу, которая принимает на вход трёхзначное число
+ и на выходе показывает вторую цифру этого числа.
+456 -> 5
+782 -> 8
+918 -> 1
+*/
+// System.Console.WriteLine("Введите число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// int second = numberA / 10 % 10;
+// System.Console.WriteLine(second);
+
+/*
+Задача11. Напишите программу, которая выводит случайное 
+трёхзначное число и удаляет вторую цифру этого числа.
+456 -> 46
+782 -> 72
+*/ 
+// int number = new Random().Next(100,1000);
+// System.Console.WriteLine(number);
+// int first = number / 100;
+// int three = number % 10;
+// int result = first * 10 + three;
+// Console.WriteLine(result);
+
+Второй  способ
+// Console.Clear();
+// Console.Write("Введите трехзначное число: ");
+// int n = int.Parse(Console.ReadLine()!);
+// while (n < 100 || n > 999)                     // 23 < 100 || 23 > 999 -> 1 + 0 = 1
+// {  
+//     Console.Write("Вы ошиблись!\nВведите трехзначное число: ");
+//     n = int.Parse(Console.ReadLine()!);
+// }
+// int n1 = n / 100;
+// int n3 = n % 10;
+// Console.WriteLine(n1 * 10 + n3 * 1);
+
+// /*
+// Задача 12.Напишите программу, которая будет принимать на вход два числа и выводить, 
+// является ли второе число кратным первому. 
+// Если второе число некратно первому, то программа выводит остаток от деления.
+// 34, 5 -> некратно, остаток 4
+// 16, 4 -> кратно
+
+// */
+// Console.WriteLine("Введите число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите число: ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+// int numberC = numberA % numberB;
+// if (numberA % numberB == 0)
+// {
+//     System.Console.WriteLine("кратно");
+// }
+// else
+// {
+//     System.Console.WriteLine($"некратно, остаток {numberC}");
+// }
+
+// Второй способ похожий
+
+// Console.Clear();
+// Console.Write("Введите 1-ое число: ");
+// int firstNumber = int.Parse(Console.ReadLine()!);
+// Console.Write("Введите 2-ое число: ");
+// int secondNumber = int.Parse(Console.ReadLine()!);
+// if (firstNumber % secondNumber == 0)
+//     Console.WriteLine("да");
+// else
+//     Console.WriteLine($"нет, {firstNumber % secondNumber}");
+
+/*НЕ РАБОТАЕТ ПОСЛЕДНЯЯ СТРОКА
+Задача 13: Напишите программу, которая выводит третью цифру заданного числа 
+или сообщает, что третьей цифры нет.
+645 -> 5
+78 -> третьей цифры нет
+32679 -> 6
+*/
+// Console.WriteLine("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int result = 0;
+// for (int i = number; i >= 100; i /= 10)
+// {
+//     result = i % 10;
+// }
+// if (number < 100)
+// {
+//     Console.WriteLine("Нет третьей цифры");
+// }
+// else
+// {
+//     Console.WriteLine($"Третья цифра = {result}");
+// }
+
+// Второй способ, но цифру ищем третью с конца
+/ Console.Clear();
+// Console.Write("Введите число: ");
+// int number = int.Parse(Console.ReadLine()!);
+// number = Math.Abs(number); // модуль числа |-5| = 5
+// if (number < 100)
+//     Console.WriteLine("Третьей цифры нет");
+// else{
+//     Console.WriteLine(number % 1000 / 100);
+// }
+// 456 -> 4
+// 3129 -> 1
+// 59602 -> 6
+// 123456 -> 4
+// 9012381 -> 3
+// % 100 -> 99(max)
+// n % 1000 -> 999(max)
+// |int| < 2175......
+
+/*Домашняя задача
+ Задача14.Напишите программу, которая принимает на вход число и проверяет, 
+ кратно ли оно одновременно 7 и 23.
+14 -> нет
+46 -> нет
+161 -> да
+*/
+// Console.WriteLine("Введите число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// if (numberA % 7 == 0 && numberA % 23== 0)
+// {
+//     System.Console.WriteLine("да");
+// }
+// else
+// {
+//     System.Console.WriteLine("нет");
+// }
+
+/*
+15: Напишите программу, которая принимает на вход цифру, обозначающую день недели,
+ и проверяет, является ли этот день выходным.
+*/
+// Console.WriteLine("Введите номер дня недели: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// if (numberA > 0 && numberA <= 5)
+// {
+//     System.Console.WriteLine("Рабочий день!");
+// }
+// else if (numberA == 6 || numberA == 7)
+// {
+//     System.Console.WriteLine("Ура!Выходной!");
+// }
+// else 
+// {
+//     System.Console.WriteLine("Нет такого дня недели");
+// }
 
 /*
 16.Напишите программу, которая принимает на вход два числа и проверяет, 
@@ -152,18 +306,276 @@ else
 25, 5 -> да
 8,9 -> нет
 */
-System.Console.WriteLine("Введите число: ");
-int namberA = Convert.ToInt32(Console.ReadLine());
-System.Console.WriteLine("Введите число: ");
-int namberB = Convert.ToInt32(Console.ReadLine());
-if (namberA * namberA == namberB || namberB * namberB == namberA)
+// System.Console.WriteLine("Введите число: ");
+// int namberA = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Введите число: ");
+// int namberB = Convert.ToInt32(Console.ReadLine());
+// if (namberA * namberA == namberB || namberB * namberB == namberA)
+// {
+//     System.Console.WriteLine("да");
+// }
+// else
+// {
+//     System.Console.WriteLine("нет");
+// }
+
+/*Домашняя задача
+Задача 17. Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0
+и выдаёт номер координатной четверти плоскости, в которой находится эта точка.
+x=34; y=-30 -> 4 
+x=2; y=-4 -> 1
+x=-34; y=-30 -> 3
+*/ 
+// Console.WriteLine("Введите координаты точки. X: ");
+// int userX = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координаты точки. Y: ");
+// int userY = Convert.ToInt32(Console.ReadLine());
+// if (userX>0 && userY>0) System.Console.WriteLine("Точка находится в первой четверти");
+// if (userX<0 && userY>0) System.Console.WriteLine("Точка находится во второй четверти");
+// if (userX<0 && userY<0) System.Console.WriteLine("Точка находится в третьей четверти");
+// if (userX>0 && userY<0) System.Console.WriteLine("Точка находится в четвертой четверти");
+// if (userX==0 || userY==0) System.Console.WriteLine("Точка находится на оси координат");
+
+/*
+Задача 18. Напишите программу, которая по заданному номеру четверти, показывает диапазон
+возможных координат точек в этой четверти (x и y).
+*/ 
+// Console.WriteLine("Введите один из четырех номер четверти: ");
+// int userCvoter = Convert.ToInt32(Console.ReadLine());
+// if (userCvoter==1)
+// System.Console.WriteLine("Все X и Y больше 0");
+// if (userCvoter==2)
+// System.Console.WriteLine("Все X меньше 0, и Y больше 0");
+// if (userCvoter==3)
+// System.Console.WriteLine("Все X и Y меньше 0");
+// if (userCvoter==4)
+// System.Console.WriteLine("Все X больше 0, Y меньше 0");
+
+/*НЕПОНЯТЕН МЕТОД
+Задача 19. Внутри класса Answer напишите метод IsPalindrome, который принимает на вход пятизначное число
+ number и проверяет, является ли оно палиндромом.
+Метод должен проверить является ли число пятизначным, в противном случае - вывести 
+Число не пятизначное и False в следующей строке.
+Для остальных чисел вернуть True или False.
+*/
+// System.Console.Write("Введите пятизначное число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if (10000 > number || number > 99999)
+// {
+//     System.Console.WriteLine("Число не пятизначное");
+//     return;
+// }
+// int revN = 0;
+// for (int i = number; i > 0; i = i / 10)
+// {
+//     revN = revN * 10 + i % 10;
+// }
+// if (number == revN)
+// {
+//     System.Console.WriteLine("Чиcло является палиндромом");
+
+// }
+// else
+// {
+//     System.Console.WriteLine("Не является палиндромом");
+// }
+
+/*НЕПОНЯТНО, КАК ВВОДИТЬ ДАННЫЕ
+Задача 20.Напишите программу, которая принимает на вход координаты двух точек и находит
+расстояние между ними в 2D пространстве.
+
+A (3,6); B (2,1) -> 5,09
+A (7,-5); B (1,-1) -> 7,21
+*/
+// Console.WriteLine("Введите координаты точки A (x,y): ");
+// int userAx = Convert.ToInt32(Console.ReadLine());
+// int userAy = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координаты точки B (x,y): ");
+// int userBx = Convert.ToInt32(Console.ReadLine());
+// int userBy = Convert.ToInt32(Console.ReadLine());
+// //int squareX = (userBx - userAx) * (userBx-userAx) 
+// double squareX = Math.Pow(userBx - userAx, 2);// Math.Pow(a, 3) функция возведения в степень,(что возводим в степень, в какую степень)
+// double squareY = Math.Pow(userBy - userAy, 2);
+// double rootXY = Math.Sqrt(squareX + squareY);// Math.Sqrt находит квадратный корень
+// System.Console.WriteLine(Math.Round(rootXY, 2));//Math.Round(a, 2) округление чисел после запятой(число, сколько чисел после запятой оставить()
+
+/*
+Задача 21. Внутри класса Answer напишите метод DistanceBetweenPoints, который принимает на вход координаты двух точек pointA и pointB в виде массива целых чисел, 
+и возвращает расстояние между ними в 3D пространстве.
+*/ 
+// Console.WriteLine("Введите координаты точки A (x,y,z): ");
+// int userAx = Convert.ToInt32(Console.ReadLine());
+// int userAy = Convert.ToInt32(Console.ReadLine());
+// int userAz = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите координаты точки B (x,y,z): ");
+// int userBx = Convert.ToInt32(Console.ReadLine());
+// int userBy = Convert.ToInt32(Console.ReadLine());
+// int userBz = Convert.ToInt32(Console.ReadLine());
+// double squareX = Math.Pow(userBx - userAx, 2);
+// double squareY = Math.Pow(userBy - userAy, 2);
+// double squareZ = Math.Pow(userBz - userAz, 2);
+// double rootXY = Math.Sqrt(squareX + squareY+squareZ);
+// System.Console.WriteLine(Math.Round(rootXY, 2));
+
+/*
+Задача 22. Напишите программу, которая принимает на вход число (N) 
+и выдаёт таблицу квадратов чисел от 1 до N.
+
+5 -> 1, 4, 9, 16, 25.
+2 -> 1,4
+*/
+// System.Console.Write("Введите число: ");
+// int usernumber = int.Parse(Console.ReadLine()!);
+// for (int i = 1; i <= usernumber; i++)
+// {
+//     System.Console.WriteLine($"{i} * {i} = {Math.Pow(i, 2)}");
+// }
+
+/*
+Задача 23. Внутри класса Answer напишите метод ShowCube, который принимает на вход число (N) и 
+выводит таблицу кубов чисел от 1 до N (включительно) каждое на новой строке.
+*/ 
+// System.Console.WriteLine("Enter number: ");
+// int usernumber = Convert.ToInt32(Console.ReadLine());
+// for (int i = 1; i <= usernumber; i++)
+// {
+//     System.Console.WriteLine($"{i} * {i} * {i} = {Math.Pow(i, 3)}");
+// }
+
+/*ФУНКЦИИ НАЧАЛИСЬ
+Задача 24. Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел от 1 до А.
+7 -> 28
+4 -> 10
+8 -> 36*/
+
+// System.Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int result = 0;
+// for (int i = 1; i <= number; i++)
+//     {
+//      result = result + i;
+     
+//     }
+
+// System.Console.WriteLine(result);
+
+
+// Второй способ
+
+// System.Console.Write("Введите число: ");
+// int userA = Convert.ToInt32(Console.ReadLine());
+
+// int Summer(int number)
+// {
+//     int summ = 0;
+//     for (int i = 1; i <= number; i++)
+//     {
+//         summ = summ + i;
+//     }
+//     return summ;
+// }
+
+// int userResult = Summer(userA);
+// System.Console.WriteLine(userResult); 
+
+/*
+Задача 25: Напишите цикл, который принимает на вход два числа (A и B) 
+и возводит число A в натуральную степень B.
+3, 5 -> 243 (3⁵)
+2, 4 -> 16
+*/ 
+// System.Console.Write("Введите первое число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите второе число: ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+// Met(numberA, numberB);
+
+// void Met(int a, int b)
+// {
+//     int result = 1;
+//     for (int i = 0; i < b; i++)
+//     {
+//         result = result * a;
+//     }
+//     System.Console.WriteLine(result);
+// }
+
+/*
+26. Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
+456 -> 3
+78 -> 2
+89126 -> 5
+*/ 
+
+// System.Console.WriteLine("Введите число ");
+// int userA = Convert.ToInt32(Console.ReadLine());
+
+// int Number(int a)
+// {
+//     int num = 0;
+//      if (a == 0) num = 1;
+//     if (a < 0) a = a * -1;
+//     for (int i = userA; i > 0; i= i/10)
+//     {
+//         num++;
+//     }
+//     return num;
+// }
+// int userResalt = Number(userA);
+// System.Console.WriteLine(userResalt);
+
+/*
+Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+452 -> 11
+82 -> 10
+9012 -> 12
+*/
+// System.Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int Sum(int num){
+//     int root = 0;
+//     int result = 0;
+//     for (int i = number; i > 0; i = i / 10) {
+//         root = i % 10;
+//         result = result + root;
+//     }
+//     return result;
+// }
+// int userResalt = Sum(number);
+// System.Console.WriteLine(userResalt);
+
+/*НЕ РАБОТАЕТ
+28. Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+4 -> 24
+5 -> 120
+*/ 
+System.Console.Write("Введите число: ");
+int userA = Convert.ToInt32(Console.ReadLine());
+
+int Summer(int number)
 {
-    System.Console.WriteLine("да");
+    int summ = 1;
+    for (int i = 1; i <= number; i++)
+    {
+        summ = summ * i;
+    }
+    return summ;
 }
-else
-{
-    System.Console.WriteLine("нет");
-}
+
+int userResult = Summer(userA);
+System.Console.WriteLine(userResult);
+
+// Второй способ тоже не работает
+// System.Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int result = 0;
+// for (int i = 1; i <= number; i++)
+//     {
+//      result = result * i;
+     
+//     }
+
+// System.Console.WriteLine(result);
 
 // Семинар 1
 
