@@ -124,6 +124,16 @@ System.Console.WriteLine(result);
 //     System.Console.Write(i + "\t");
 // }
 
+// Второй способ
+// Console.WriteLine("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// for (int i = 1; i <= number; i+=1)
+// {
+//   if(i % 2 == 0) 
+// }
+// System.Console.Write(i+"\t");
+
+
 /*Домашняя работа
  Задача9.Напишите программу, которая выводит случайное число из отрезка [10, 99]
   и показывает наибольшую цифру числа.
@@ -172,7 +182,7 @@ System.Console.WriteLine(result);
 // int result = first * 10 + three;
 // Console.WriteLine(result);
 
-Второй  способ
+// Второй  способ
 // Console.Clear();
 // Console.Write("Введите трехзначное число: ");
 // int n = int.Parse(Console.ReadLine()!);
@@ -184,6 +194,9 @@ System.Console.WriteLine(result);
 // int n1 = n / 100;
 // int n3 = n % 10;
 // Console.WriteLine(n1 * 10 + n3 * 1);
+//            или 
+// Console.Write($"{n1}{n3}");
+
 
 // /*
 // Задача 12.Напишите программу, которая будет принимать на вход два числа и выводить, 
