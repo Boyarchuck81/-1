@@ -1,13 +1,29 @@
 ﻿Console.Clear();
-Console.Write("Введите трехзначное число: ");
-int n = int.Parse(Console.ReadLine()!);
-while (n < 100 || n > 999)                     // 23 < 100 || 23 > 999 -> 1 + 0 = 1
-{  
-    Console.Write("Вы ошиблись!\nВведите трехзначное число: ");
-    n = int.Parse(Console.ReadLine()!);
+// Задача1.Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве. Программа должна выдать ответ: Да/Нет.
+// Примеры
+// [1 3 4 19 3], 8 => Нет
+// [-4 3 4 1], 3 => Да
+
+int[] FillArray(int size)
+{
+  int[] array = new int[size];
+  for(int i = 0; i < array.Length;i++)
+{
+     array [i] = new Random().Next(-5,6);
 }
-int n1 = n / 100;
-int n3 = n % 10;
-// Console.WriteLine(n1 * 10 + n3 * 1);
-// или 
-Console.Write($"{n1}{n3}");
+     return array;
+}
+
+void PrintArray(int[] inArray)
+{
+    for(int i = 0; i < inArray.Length; i++)
+    {
+        Console.Write(inArray[i] + " ");
+    }
+        System.Console.WriteLine();
+}
+int LengthArray = 8;
+int[] arr = FillArray(LengthArray);
+
+int LengthArray2 = 12;
+int[] arr2 = FillArray(LengthArray2);
