@@ -834,6 +834,53 @@ a = 891 => 81
 // [1 3 4 19 3], 8 => Нет
 // [-4 3 4 1], 3 => Да
 
+// Console.Clear();
+// int[] FillArray(int size)
+// {
+//   int[] array = new int[size];
+//   for(int i = 0; i < array.Length;i++)
+// {
+//      array [i] = new Random().Next(-5,6);
+// }
+//      return array;
+// }
+
+// void PrintArray(int[] inArray)
+// {
+//     for(int i = 0; i < inArray.Length; i++)
+//     {
+//         Console.Write(inArray[i] + " ");
+//     }
+//         System.Console.WriteLine();
+// }
+
+// void FindNumberInArray(int num, int[] ar)
+// {
+//     bool flag = false;
+//     foreach(int element in ar)
+//     {
+//         if(element == num)
+//         {
+//             flag = true;
+//         }
+        
+//     }
+//     if(flag) Console.Write("да");
+//     else Console.Write("нет");
+// }
+
+// int LengthArray = 8;
+// int[] arr = FillArray(LengthArray);
+// PrintArray(arr);
+// int LengthArray2 = 12;
+// int[] arr2 = FillArray(LengthArray2);
+// PrintArray(arr2);
+
+// int number = Convert.ToInt32(Console.ReadLine());
+// FindNumberInArray(number, arr);
+// System.Console.WriteLine();
+// FindNumberInArray(number, arr2);
+
 
 // Задача2.Задайте массив из 10 элементов, заполненный числами из промежутка [-10, 10]. Замените отрица-тельные элементы на положительные, а положительные на отрицательные.
 // Пример
@@ -849,6 +896,11 @@ a = 891 => 81
 // Пример
 // 456 => [6 5 4]
 // 781 => [1 8 7]
+
+
+
+
+
 
 
 // Семинар 4
