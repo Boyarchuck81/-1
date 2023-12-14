@@ -557,31 +557,30 @@ A (7,-5); B (1,-1) -> 7,21
 // int userResalt = Sum(number);
 // System.Console.WriteLine(userResalt);
 
-/*НЕ РАБОТАЕТ
-28. Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+/*Задача 28. Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
 4 -> 24
 5 -> 120
 */ 
-System.Console.Write("Введите число: ");
-int userA = Convert.ToInt32(Console.ReadLine());
+// System.Console.Write("Введите число: ");
+// int userA = Convert.ToInt32(Console.ReadLine());
 
-int Summer(int number)
-{
-    int summ = 1;
-    for (int i = 1; i <= number; i++)
-    {
-        summ = summ * i;
-    }
-    return summ;
-}
+// int Summer(int number)
+// {
+//     int summ = 1;
+//     for (int i = 1; i <= number; i++)
+//     {
+//         summ = summ * i;
+//     }
+//     return summ;
+// }
 
-int userResult = Summer(userA);
-System.Console.WriteLine(userResult);
+// int userResult = Summer(userA);
+// System.Console.WriteLine(userResult);
 
-// Второй способ тоже не работает
+//ВТОРОЙ СПОСОБ
 // System.Console.Write("Введите число: ");
 // int number = Convert.ToInt32(Console.ReadLine());
-// int result = 0;
+// int result = 1;
 // for (int i = 1; i <= number; i++)
 //     {
 //      result = result * i;
@@ -589,6 +588,1688 @@ System.Console.WriteLine(userResult);
 //     }
 
 // System.Console.WriteLine(result);
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+// */
+// Console.Clear();
+
+// int[] GetArray(int start, int end, int size) // начало, конец и размер массива
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(start, end + 1);  // заполняем массив рандомными числами в диапазоне введеных данных
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write(", ");//[5, 7, 1, 4]
+//     }
+//     System.Console.Write("]");
+// }
+
+// System.Console.WriteLine("Задай диапазон массива от:");
+// int userStart = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Задай диапазон массива до:");
+// int userEnd = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Задай размер массива:");
+// int userSize = Convert.ToInt32(Console.ReadLine());
+
+// int[] userArray = GetArray(userStart, userEnd, userSize);
+// PrintArray(userArray);
+
+/* Задача 30. Напишите программу, которая выводит массив из 8 элементов,
+ заполненный нулями и единицами в случайном порядке.
+*/ 
+// int[] GetRunArray(int size)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//        array[i] = new Random().Next(0,2);
+//     } 
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write($"{arr[i]}, ");
+//     }
+// }
+// int[] userArray = GetRunArray(8);
+// PrintArray(userArray);
+
+/*
+Задача 31: Задайте массив из 12 элементов, заполненный
+случайными числами из промежутка [-9, 9]. Найдите сумму
+отрицательных и положительных элементов массива.
+Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма
+положительных чисел равна 29, сумма отрицательных равна
+-20.
+*/
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(-9, 10);
+//     }
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write(", ");//[5, 7, 1, 4]
+//     }
+//     System.Console.WriteLine("]");
+// }
+// int GetSumMinus(int[] arr)
+// {
+//     int sumMinus = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if (arr[i] < 0)
+//         {
+//             sumMinus = sumMinus + arr[i]; // Прибавляем текущее отрицательное число к сумме
+//         }
+//     }
+//     return sumMinus;
+// }
+// int GetSumPlus(int[] arr)
+// {
+//     int sumPlus = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if (arr[i] > 0)
+//         {
+//             sumPlus = sumPlus + arr[i]; // Прибавляем текущее отрицательное число к сумме
+//         }
+//     }
+//     return sumPlus;
+// }
+// int[] userArray = GetArray(8);
+// int sumMinus = GetSumMinus(userArray);
+// int sumPlus = GetSumPlus(userArray);
+// PrintArray(userArray);
+// Console.WriteLine("Сумма отрицательных чисел массива:" + sumMinus);
+// Console.WriteLine("Сумма положительных чисел массива:" + sumPlus);
+
+/*
+Задача 32.Напишите программу замена элементов
+массива: положительные элементы замените на
+соответствующие отрицательные, и наоборот.
+*/
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(-99, 99);
+//     }
+//    return array;
+// }
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write(", ");
+//     }
+//     System.Console.WriteLine("]");
+// }
+// void PrintNumArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         int num = -1;
+        
+//         System.Console.Write(arr[i] * num);
+//         if (i < arr.Length - 1)
+
+//             System.Console.Write(", ");
+//     }
+//     System.Console.WriteLine("]");
+// }
+// int[] userArray = GetArray(size);
+// int[] userNumArray = GetArray(size);
+// PrintArray(userArray);
+// PrintNumArray(userNumArray);
+// PrintArray(userArray);
+
+/*
+Задача 33. Задайте массив. Напишите программу, которая
+определяет, присутствует ли заданное число в массиве
+*/
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Какое число нужно найти в массиве:");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(-9, 9);
+//     }
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write(", ");
+//     }
+//     System.Console.WriteLine("]");
+// }
+// bool CheckNumber(int[] arr,int number)
+// {
+// for (int i = 0; i < array.Length; i++)
+// {
+//     if (arr[i] == number)
+//     {
+//         return true;
+//     }
+// }
+//      return false;
+// }
+// int[] userArray = GetArray(size);
+// bool userNumber = CheckNumber(array, number);
+// PrintArray(userArray);
+// System.Console.WriteLine(userNumber);
+
+/*Задача 34
+Напишите программу, которая подсчитывает количество четных элементов в массиве 
+целых положительных трехзначных чисел и выводит результат на экран.
+Программа должна иметь метод CountEvenElements, который принимает массив целых 
+положительных трехзначных чисел и возвращает количество четных элементов в массиве.
+Программа должна иметь метод PrintArray, который выводит элементы массива на экран.
+При выводе элементы массива должны быть разделены символом табуляции "\t".
+*/ 
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(100, 1000);
+//     }
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+    
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write("\t");//[5, 7, 1, 4]
+//     }
+   
+// }
+// int CountEvenElements(int[]arr)
+// {
+//     int count = 0;
+//     for (int i = 0; i <arr.Length; i++)
+//     {
+//         if(arr[i]%2==0)
+//         count++;
+//     }
+//     return count;
+// }
+// int[] userArray = GetArray(size);
+// int countArray = CountEvenElements(userArray);
+// PrintArray(userArray);
+// System.Console.WriteLine();
+// System.Console.WriteLine("Количество четных элементов: " + countArray);
+
+/*Задача 35
+Задайте одномерный массив из 123 случайных чисел.
+Найдите количество элементов массива, значения которых лежат в
+отрезке [10,99]. 
+*/
+
+// int size = 123;
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(-99, 99);
+//     }
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write(", ");
+//     }
+//     System.Console.WriteLine("]");
+// }
+// int CountGetArray(int[] arr)
+//     {
+//         int count = 0;
+//         for (int i = 0; i < arr.Length; i++)
+//         {
+//             if (arr[i] >= 10 && arr[i] <= 99)
+//             {
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
+// int[] userArray = GetArray(size);
+// int countArray = CountGetArray(userArray);
+// PrintArray(userArray);
+// System.Console.WriteLine("Количество элементов лежащих в отрезке :" + countArray);
+
+/*Задача 36
+Напишите программу, которая находит сумму элементов с нечетными индексами в одномерном массиве целых
+чисел и выводит результат на экран.
+Программа должна иметь метод SumOddElements, который принимает массив 
+целых чисел и возвращает сумму элементов с нечетными индексами в массиве.
+*/
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// int[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(1, 10);
+//     }
+//     return array;
+// }
+// void PrintArray(int[] arr)
+// {
+
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write("\t");//[5, 7, 1, 4]
+//     }
+
+// }
+// int SumOddElements(int[] array)
+// {
+// int sum = 0;
+// for (int i = 0; i < array.Length; i++)
+// {
+//     if (i % 2 == 1)
+//         sum = array[i] + sum;
+// }
+// return sum;
+// }
+// int[] userArray = GetArray(size);
+// int sumArray = SumOddElements(userArray);
+// PrintArray(userArray);
+// System.Console.WriteLine();
+// System.Console.WriteLine("Сумма нечетных элементов: " + sumArray);
+
+/*Задача 37
+Найдите произведение пар чисел в одномерном массиве.
+Парой считаем первый и последний элемент, второй и предпоследний
+и т.д. Результат запишите в новом массиве.
+[1 2 3 4 5] -> 5 8 3
+[6 7 3 6] -> 12 10
+*/
+
+// int[] GetRandomArray(int size)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(0, 10);
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[] arr)
+// {
+//     System.Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1) System.Console.Write(", ");// [5, 7, 1, 4
+
+//     }
+
+//     System.Console.Write("]");
+// }
+
+// int[] ProductArray(int[] arr)                // метод для перемножения пар чисел в одномерном массиве 
+//                                 // и передачи результатов перемножения в новый массив
+// {
+//     int size=0;
+//     if (arr.Length%2==1) size=arr.Length/2+1;            // условие, при котором если в исходном массиве нечетное число элементов, 
+//     else size=arr.Length/2;                    // чтобы при перемножении пар элементов, начиная с концов массива создать иллюзию
+//                                     // перемножения центрального элемента самого на себя
+//     int[] res = new int[size];                    // создание нового массива, куда будут записаны результаты перемножения
+//     for (int i = 0; i < size; i++)
+//     {
+//         if ((arr.Length%2==1)&&(i==size-1)) 
+//         res[i]=arr[i];                                    // условие, при котором при нечетном количестве элементов исходного массива 
+//         else res[i] = arr[i]*arr[arr.Length-i-1];        // средний его элемент будет приравнен к последнему элементу нового массива
+//     }
+//     return res;
+// }
+// int[] userArray = GetRandomArray(7);
+// PrintArray(userArray);
+// System.Console.WriteLine();
+// int[] newArray = ProductArray(userArray);
+// PrintArray(newArray);
+
+/*Задача 38
+Напишите программу для работы с массивом вещественных чисел.
+Реализуйте класс ArrayOperations, который содержит следующие статические методы:
+FindMax(double[] array): Метод принимает на вход массив вещественных чисел array и
+ возвращает максимальное число из массива.
+FindMin(double[] array): Метод принимает на вход массив вещественных чисел array и
+ возвращает минимальное число из массива.
+CalcDifferenceBetweenMaxMin(double[] array): Метод принимает на вход массив вещественных
+ чисел array и возвращает разницу между максимальным и минимальным числами в массиве.
+PrintArray(double[] array): Метод для вывода массива на экран. Он принимает на вход массив
+ array и выводит его элементы с двумя знаками после запятой через табуляцию.
+*/
+// System.Console.WriteLine("Задай размер массива:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// double[] array = new double[size];
+// Random arr = new Random();
+// double[] GetArray(int size)
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = Math.Round((arr.NextDouble() * (10 - 1) + 1), 2);
+//     }
+//     return array;
+// }
+// void PrintArray(double[] arr)
+// {
+
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         System.Console.Write(arr[i]);
+//         if (i < arr.Length - 1)
+//             System.Console.Write("\t");//[5, 7, 1, 4]
+//     }
+
+// }
+// double FindMax(double[] array)
+ 
+// {
+//     double max = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] > max)
+//             max = array[i];
+//     }
+//     return max;
+// }
+// double FindMin(double[] array)
+ 
+// {
+//     double min = array[0];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] < min)
+//             min = array[i];
+//     }
+//     return min;
+// }
+
+// double CalcDifferenceBetweenMaxMin(double[] array)
+//     {
+//         double max = FindMax(array);
+//         double min = FindMin(array);
+//         double between = max - min;
+//         return between;
+//     }
+// double[] userArray = GetArray(size);
+// PrintArray(userArray);
+// Console.WriteLine();
+//  double maxNum = FindMax(userArray);
+// double minNum = FindMin(userArray);
+// double betweenNum = CalcDifferenceBetweenMaxMin(userArray);
+//  Console.WriteLine($"Разность между максимальным и минимальным элементом = {betweenNum}");
+
+/*
+Задача 39: Напишите программу, которая перевернёт одномерный
+массив (последний элемент будет на первом месте, а первый - на
+последнем и т.д.)
+*/ 
+// int Prompt(string massage)
+// {
+//     System.Console.Write(massage);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+
+// int[] GenerateArray(int size, int minValue, int maxValue)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+
+// int[] Reverse(int[] array)
+// {
+//     for (int i = 0; i < array.Length / 2; i++)
+//     {
+//         int temp = array[i];
+//         array[i] = array[array.Length - 1 - i];
+//         array[array.Length - 1 - i] = temp;
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[] arrayOne)
+// {
+//     System.Console.WriteLine("Массив:");
+//     for (int i = 0; i < arrayOne.Length; i++)
+//     {
+//         System.Console.Write(arrayOne[i]);
+//         if (i < arrayOne.Length - 1)
+//             System.Console.Write("\t");
+//     }
+//     System.Console.WriteLine();
+// }
+
+// int length = Prompt("Длина массива: ");
+// int min = Prompt("Минимальное значение: ");
+// int max = Prompt("Максимальное значене: ");
+// int[] array = GenerateArray(length, min, max);
+// PrintArray(array);
+// PrintArray(Reverse(array));
+
+/*Задача 40
+Напишите программу, которая принимает на вход три числа и
+проверяет, может ли существовать треугольник с сторонами такой длины.
+*/ 
+// System.Console.WriteLine("Введите первое число: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Введите второе число: ");
+// int numberB = Convert.ToInt32(Console.ReadLine());
+// System.Console.WriteLine("Введите третье число: ");
+// int numberC = Convert.ToInt32(Console.ReadLine());
+// bool Triangle (int numberA,int numberB,int numberC)
+// {
+//     if(numberA<numberB+numberC && numberB<numberA+numberC && numberC< numberB+numberA) return true;
+//     else return false;
+// }
+// bool userNumber = Triangle ( numberA, numberB, numberC);
+// System.Console.WriteLine(userNumber);
+
+/*Задача 41
+Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+0, 7, 8, -2, -2 -> 2
+1, -7, 567, 89, 223-> 3
+*/ 
+/*Console.WriteLine("Введите числа, разделяя их запятой:");
+string num = Console.ReadLine(); // Считываем ввод пользователя
+int CountNumbers(string num)
+{
+     string[] numbers = num.Split(','); // Разделяем строку на числа через метод Split
+     int count = 0;
+        foreach (string i in numbers)
+        {
+            int parsedNumber;
+            if (int.TryParse(i, out parsedNumber)) // Пытаемся преобразовать строку в число через int.TryParse
+            {
+                if (parsedNumber > 0) // Проверяем, является ли число больше 0
+                {
+                    count++;
+                }
+            }
+        }
+  return count;
+}
+     int count = CountNumbers(num);
+    Console.WriteLine("Количество чисел больше 0: " + count);*/
+//     System.Console.Write("Укажите количество чисел: ");
+// int value = int.Parse(System.Console.ReadLine());
+
+// int count = 0;
+
+// for(int i = 0; i < value; i++)
+// {
+//     System.Console.Write("Введите число: ");
+//     if(int.Parse(System.Console.ReadLine()) > 0 ) count++;
+// }
+
+// System.Console.WriteLine("Чисел со значением больше нуля было введено: " + count);
+
+/*Задача 42
+Напишите программу, которая будет преобразовывать
+десятичное число в двоичное.
+45 -> 101101
+3 -> 11
+2 -> 10
+
+System.Console.WriteLine("Введите число: ");
+int numberA = Convert.ToInt32(Console.ReadLine());
+string binary = Convert.ToString(numberA, 2);
+System.Console.WriteLine(binary);*/
+
+    
+    //     System.Console.Write("Введите число: ");
+    //     int decimalNumber = Convert.ToInt32(Console.ReadLine());
+    //     string binaryNumber = DecimalToBinary(decimalNumber)// перевод в строку
+        
+    //  string DecimalToBinary(int decimalNumber)
+    // {
+    //     string binaryNumber = "";// начало строки
+
+    //     while (decimalNumber > 0)
+    //     {
+    //         int remainder = decimalNumber % 2; // Остаток от деления на 2
+    //         binaryNumber = remainder + binaryNumber; // Добавляем остаток в начало строки
+    //         decimalNumber /= 2; // Деление на 2
+    //     }
+
+    //     return binaryNumber;
+    // }
+    // Console.WriteLine(binaryNumber);
+
+/*
+Напишите программу, которая найдёт точку пересечения двух прямых, 
+заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+значения b1, k1, b2 и k2 задаются пользователем.
+
+b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+*/
+
+/*Console.WriteLine("Введите значения b1, k1, b2 и k2, разделяя их запятой:");
+string input = Console.ReadLine(); // Считываем ввод пользователя
+double[] array = ParseInput(input);//Сохраняем значения в массив
+double x = CrossPoint(array[0], array[1], array[2], array[3]);
+double y = Cusp(x, array[0], array[1]);
+double[] ParseInput(string input)
+    {
+        string[] numbers = input.Split(','); // Разделяем строку на числа
+        double[] array = new double[4];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            double userNumber;
+            if (double.TryParse(numbers[i], out userNumber)) // Пытаемся преобразовать строку в число
+            {
+                array[i] = userNumber;                      //записать в массив
+            }
+        }
+        return array;
+    }
+
+double CrossPoint(double b1, double k1, double b2, double k2)
+    {
+        if (k1 == k2)
+        {
+            Console.WriteLine("Прямые параллельны и не имеют точки пересечения.");
+        }
+
+        double x = (b2 - b1) / (k1 - k2);// вычисление точки пересечения
+        return x;
+    }
+
+double Cusp(double x, double b, double k)
+    {
+        double y = k * x + b;// вычисление точки пересечения
+        return y;
+    }
+Console.WriteLine("Точка пересечения: (" + x + ", " + y + ")");*/
+
+
+// Console.WriteLine("введите значение b1");
+// double b1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("введите число k1");
+// double k1 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("введите значение b2");
+// double b2 = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("введите число k2");
+// double k2 = Convert.ToInt32(Console.ReadLine());
+
+// void CrossLine(double b1, double k1, double b2, double k2)
+// {
+
+//     if (k1 == k2)
+//     {
+//         if (b1 == b2)
+//             System.Console.WriteLine("Прямые совпадают");
+//         else
+//             System.Console.WriteLine("Прямые параллельны");
+//             return;
+//     }
+//     double x = (-b2 + b1) / (-k1 + k2);
+//     double y = k2 * x + b2;
+//     Console.WriteLine($"Две прямые пересекаются в точке с координатами X: {x}, Y: {y}");
+// }
+// CrossLine(b1, k1, b2, k2);
+
+/*
+Не используя рекурсию, выведите первые N чисел
+Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
+Если N = 5 -> 0 1 1 2 3
+Если N = 3 -> 0 1 1
+Если N = 7 -> 0 1 1 2 3 5 8
+*/ 
+// System.Console.WriteLine("Введите количество чисел Фибоначчи: ");
+// int numberA = Convert.ToInt32(Console.ReadLine());
+// void PrintFibonacci(int numberA)
+// {
+//     if(numberA<=0) return;
+//     int[] fibArray = new int[numberA];
+//     fibArray[0]=0;
+//     fibArray[1]=1;
+//        for (int i = 2; i < numberA; i++)
+//        {
+//         fibArray[i] = fibArray[i-1]+fibArray[i-2];
+//         System.Console.Write(fibArray[i] +" " );
+//        }    
+// }
+// PrintFibonacci(numberA);
+
+/*Задача45
+Напишите программу, которая будет создавать копию
+заданного массива с помощью поэлементного копирования.
+*/ 
+// int Prompt(string massage)
+// {
+//     System.Console.Write(massage);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+
+// int[] GenerateArray(int size, int minValue, int maxValue)
+// {
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(minValue, maxValue + 1);
+//     }
+//     return array;
+// }
+
+// int[] Reverse(int[] array)
+// {
+//     for (int i = 0; i < array.Length ; i++)
+//     {
+//         int temp = array[i];
+//         array[i] = array[array.Length - 1 - i];
+//         array[array.Length - 1 - i] = temp;
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[] arrayOne)
+// {
+//     System.Console.WriteLine("Массив:");
+//     for (int i = 0; i < arrayOne.Length; i++)
+//     {
+//         System.Console.Write(arrayOne[i]);
+//         if (i < arrayOne.Length - 1)
+//             System.Console.Write("\t");
+//     }
+//     System.Console.WriteLine();
+// }
+
+// int length = Prompt("Длина массива: ");
+// int min = Prompt("Минимальное значение: ");
+// int max = Prompt("Максимальное значене: ");
+// int[] array = GenerateArray(length, min, max);
+// PrintArray(array);
+// PrintArray(Reverse(array));
+
+/*Задача 46
+Задайте двумерный массив размером m×n,
+заполненный случайными целыми числами.
+*/ 
+// System.Console.Write("Укажите количество строк: ");
+// int userM = int.Parse(System.Console.ReadLine());
+// System.Console.Write("Укажите количество столбцов: ");
+// int userN = int.Parse(System.Console.ReadLine());
+// int[,] matrix = new int[userM, userN];
+// void PrintArray(int[,] matr)
+// {
+
+//     for (int i = 0; i < userM; i++)
+//     {
+//         for (int j = 0; j < userN; j++)
+//         {
+//             Console.Write($"{matr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void FeelArray(int[,]matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i,j] =  new Random().Next(1,10);
+//         }
+//     }
+// }
+
+// PrintArray(matrix);
+// FeelArray(matrix);
+// System.Console.WriteLine();
+// PrintArray(matrix);
+
+
+/*Задача 47
+Задайте двумерный массив размером m×n,
+заполненный случайными вещественными числами
+*/ 
+// System.Console.Write("Укажите количество строк: ");
+// int userM = int.Parse(System.Console.ReadLine());
+// System.Console.Write("Укажите количество столбцов: ");
+// int userN = int.Parse(System.Console.ReadLine());
+// Console.WriteLine("Минимальная граница чисел: ");
+// int minLimitRandom = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Максимальная граница чисел: ");
+// int maxLimitRandom = Convert.ToInt32(Console.ReadLine());
+// double[,] matrix = new double[userM, userN];
+// Random num = new Random();
+// void PrintArray(double[,] matr)
+// {
+
+//     for (int i = 0; i < userM; i++)
+//     {
+//         for (int j = 0; j < userN; j++)
+//         {
+//             Console.Write($"{matr[i, j]}\t");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void CreateRandomMatrix(double[,]matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//       matrix[i, j] = Math.Round((num.NextDouble() * maxLimitRandom - minLimitRandom) + minLimitRandom, 1);
+//         }
+//     }
+// }
+// CreateRandomMatrix(matrix);
+// System.Console.WriteLine();
+// PrintArray(matrix);
+
+/*Задача 48
+Задайте двумерный массив размера m на n,
+каждый элемент в массиве находится по формуле: Aₘₙ = m+n.
+Выведите полученный массив на экран.
+*/ 
+// System.Console.Write("Укажите количество строк: ");
+// int userM = int.Parse(System.Console.ReadLine());
+// System.Console.Write("Укажите количество столбцов: ");
+// int userN = int.Parse(System.Console.ReadLine());
+// int[,] matrix = new int[userM, userN];
+// void PrintArray(int[,] matr)
+// {
+
+//     for (int i = 0; i < userM; i++)
+//     {
+//         for (int j = 0; j < userN; j++)
+//         {
+//             Console.Write($"{matr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void FeelArray(int[,]matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             matr[i,j] =  i+j;
+//         }
+//     }
+// }
+
+// PrintArray(matrix);
+// FeelArray(matrix);
+// System.Console.WriteLine();
+// PrintArray(matrix);
+
+/*Задача 49
+Задайте двумерный массив. Найдите элементы, у
+которых оба индекса чётные, и замените эти элементы на их
+квадраты.
+*/ 
+
+// Console.Clear();
+// void FillArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             arr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             System.Console.Write($"{array[i, j]} ");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+// void EvenIndex(int[,] newArr)
+// {
+//     for (int i = 0; i < newArr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < newArr.GetLength(1); j++)
+//         {
+//             if (i % 2 == 0 && j % 2 == 0) newArr[i, j] = newArr[i, j] * newArr[i, j];
+//         }
+//     }
+// }
+
+
+// int[,] array2D = new int[3, 4];
+// FillArray(array2D);
+// PrintArray(array2D);
+// System.Console.WriteLine();
+// EvenIndex(array2D);
+// PrintArray(array2D);// 
+
+/*Задача 50
+Напишите программу, которая на вход
+принимает позиции элемента в двумерном массиве, и
+возвращает значение этого элемента или же указание,
+что такого элемента нет.
+*/
+// Console.WriteLine("Enter the number of m for the matrix: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter the number of n for the matrix: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter the k value for each element: ");
+// int k = Convert.ToInt32(Console.ReadLine());
+// int[,] matrix = CreateIncreasingMatrix(m, n, k);
+// Console.WriteLine("Enter the position of the number to find (x): ");
+// int x = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter the position of the number to find (y): ");
+// int y = Convert.ToInt32(Console.ReadLine());
+// int[,] CreateIncreasingMatrix(int m, int n, int k)
+// {
+//    int[,] matrix = new int[m, n];
+//    int number = 0;
+//    for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             matrix[i, j] = number;
+//             number += k;
+//         }
+//     }
+//     return matrix;
+// }
+// void PrintArray(int[,] matrix)
+// {
+//   int m = matrix.GetLength(0);
+//   int n = matrix.GetLength(1);
+//   for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//         Console.Write($"{matrix[i, j]}\t");
+//         }
+//         Console.WriteLine();
+//         }
+// }
+// int[] FindNumberByPosition(int[,] matrix, int x, int y)
+// {
+//  int m = matrix.GetLength(0);
+//  int n = matrix.GetLength(1);
+// if (x >= m || y >= n)
+//     {
+//      return new int[1];
+//     }
+//     int number = matrix[x, y];
+//     return new int[] { number, 0 };
+//     }
+// void PrintCheckIfError(int[] result, int x, int y)
+// {
+//     if (result.Length == 1)
+//     {
+//     Console.WriteLine("There is no such index");
+//     }
+//     else
+//     {
+//     Console.WriteLine($"The number in [{x}, {y}] is {result[0]}");
+//     }
+// }
+// PrintArray(matrix);
+// int[] result = FindNumberByPosition(matrix, x, y);
+// PrintCheckIfError(result, x, y);
+// 
+/*Задача 51
+//  Задайте двумерный массив. Найдите сумму
+// элементов, находящихся на главной диагонали (с индексами
+// (0,0); (1;1) и т.д
+// */ 
+
+// int TakeEnteredNumber(string message)
+// {
+//     System.Console.WriteLine(message);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+
+
+// int[,] GetRandom2DArray(int start, int end, int row, int column)
+// {
+//     int[,] array = new int[row, column];
+//     for (int i = 0; i < row; i++)
+//     {
+//         for (int j = 0; j < column; j++)
+//         {
+//             array[i, j] = new Random().Next(start, end+1);
+//         }
+//     }
+//     return array;
+// }
+
+
+// void Print2DArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//         System.Console.Write(array[i, j] + "\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// int MainDiagonalSumm (int[,] array)
+// {
+//     int result = 0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if(i == j) result = result + array [i,j];
+//         }
+//     }
+//     return result;        
+// }
+
+
+// int userArrayRow = TakeEnteredNumber("Введите количестов строк:");
+// int userArrayColumn = TakeEnteredNumber("Введите количестов столбцов:");
+// int userArrayStart = TakeEnteredNumber("Введите начало диапозона:");
+// int userArrayEnd = TakeEnteredNumber("Введите конец диапозона:");
+// int[,] user2DArray = GetRandom2DArray(userArrayStart, userArrayEnd, userArrayRow, userArrayColumn);
+
+// Print2DArray(user2DArray);
+
+// int userMainDiagonalSum =  MainDiagonalSumm(user2DArray);
+// System.Console.WriteLine($"Сумма элементов на главной диагонали равна:{userMainDiagonalSum}");
+
+/*Задача 52
+Задайте двумерный массив из целых чисел.
+Найдите среднее арифметическое элементов в каждом
+столбце.
+*/ 
+// Console.WriteLine("Enter the number of m for the matrix: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter the number of n for the matrix: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter the k value for each element: ");
+// int k = Convert.ToInt32(Console.ReadLine());
+// int[,] matrix = CreateIncreasingMatrix(n, m, k);
+// int[,] CreateIncreasingMatrix(int n, int m, int k)
+// {
+//    int[,] matrix = new int[n, m];
+//    int number = 1;
+//    for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < m; j++)
+//         {
+//             matrix[i, j] = number;
+//             number += k;
+//         }
+//     }
+//     return matrix;
+// }
+// void PrintArray(int[,] matrix)
+// {
+//   int n = matrix.GetLength(0);
+//   int m = matrix.GetLength(1);
+//   for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < m; j++)
+//         {
+//         Console.Write($"{matrix[i, j]}\t");
+//         }
+//         Console.WriteLine();
+//         }
+// }
+// double [] FindAverageInColumns (int [,] matrix)
+//  {
+//     int rows = matrix.GetLength(0);
+//     int columns = matrix.GetLength(1);
+//     double[] result = new double[columns];
+//     for (int j = 0; j < columns; j++)
+//     {
+//         double sum = 0;
+//         for (int i = 0; i < rows; i++)
+//         {
+//             sum = sum + matrix[i, j];
+//         }
+//         result[j] = Math.Round((sum / rows),1);
+//     }
+//     return result;
+//     }
+//    void PrintListAvr(double[] result)
+// {
+//     Console.WriteLine("The averages in columns are:");
+//    for (int i = 0; i < result.Length; i++)
+//    {
+//        Console.Write($"{result[i]:f2}"+"\t");
+//    }
+//    Console.WriteLine();
+// }
+//  double[] result = FindAverageInColumns(matrix);
+// PrintArray(matrix);
+// PrintListAvr(result);
+
+/*Задача 53
+Задайте двумерный массив. Напишите программу,
+которая поменяет местами первую и последнюю строку
+массива
+*/
+// System.Console.Write("Укажите количество строк: ");
+// int rows = int.Parse(System.Console.ReadLine());
+// System.Console.Write("Укажите количество столбцов: ");
+// int cols = int.Parse(System.Console.ReadLine());
+// int[,] array = new int[rows, cols];
+// void PrintArray(int[,] arr)
+// {
+
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             Console.Write($"{arr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void FeelArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             arr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+// void ReplacingString(int[,] arr)
+// {
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             int temp = array[0, i];
+//             array[0, i] = arr[rows - 1, i];
+//             arr[rows - 1, i] = temp;
+//         }
+//     }
+// }
+// void PrintNewArray(int[,] arr)
+// {
+//  int rows = arr.GetLength(0);
+//  int cols = arr.GetLength(1);
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             Console.Write($"{arr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// FeelArray(array);
+// System.Console.WriteLine("Исходный массив:");
+// PrintArray(array);
+// ReplacingString(array);
+// System.Console.WriteLine("Массив после замены:");
+// PrintArray(array);
+
+/*Задача 54
+Задайте двумерный массив. Напишите программу, которая
+упорядочит по убыванию элементы каждой строки двумерного массива.
+*/ 
+
+// int[,] newMatrix = new int[3, 4];
+// FillmatrixRandom(newMatrix);
+// PrintMatrix(newMatrix);
+// SortRowsDescending(newMatrix);
+// Console.WriteLine();
+// PrintMatrix(newMatrix);
+// void FillmatrixRandom(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+// void SortRowsDescending(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < matrix.GetLength(1) - 1; k++)
+//             {
+//                 if (matrix[i, k] < matrix[i, k + 1])
+//                 {
+//                     int temp = matrix[i, k + 1];
+//                     matrix[i, k + 1] = matrix[i, k];
+//                     matrix[i, k] = temp;
+//                 }
+//             }
+//         }
+//     }
+// }
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             Console.Write($"{matrix[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+/*Задача 55. Задайте двумерный массив. Напишите программу,
+которая заменяет строки на столбцы. В случае, если это
+невозможно, программа должна вывести сообщение для
+пользователя*/
+
+// Console.Write("Укажите количество строк: ");
+// int rows = int.Parse(Console.ReadLine());
+// Console.Write("Укажите количество столбцов: ");
+// int cols = int.Parse(Console.ReadLine());
+// int[,] array = new int[rows, cols];
+
+// void PrintArray(int[,] arr)
+// {
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             Console.Write($"{arr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FeelArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             arr[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+// void TransposeArray( ref int[,] arr)// ref -модификатор передачи назначения 
+// {
+//     int rows = arr.GetLength(0);
+//     int cols = arr.GetLength(1);
+//     int[,] PrintNewArray = new int[cols, rows];
+//     if (rows == cols)
+//     {
+//         for (int i = 0; i < rows; i++)
+//         {
+//             for (int j = 0; j < cols; j++)
+//             {
+//                 PrintNewArray[j, i] = arr[i, j];
+//             }
+//         }
+//         arr = PrintNewArray; // присваиваем PrintNewArray массиву array
+//     }
+//     else
+//     {
+//         Console.WriteLine("Невозможно заменить строки на столбцы, так как количество строк не равно количеству столбцов.");
+//     }
+// }
+
+// void PrintNewArray(int[,] arr)
+// {
+//     int rows = arr.GetLength(0);
+//     int cols = arr.GetLength(1);
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < cols; j++)
+//         {
+//             Console.Write($"{arr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// FeelArray(array);
+// Console.WriteLine("Исходный массив:");
+// PrintArray(array);
+// Console.WriteLine("Массив после замены строк на столбцы:");
+// TransposeArray(ref array);
+// PrintNewArray(array);
+
+/*Задача 56
+Задайте прямоугольный двумерный массив. Напишите
+программу, которая будет находить строку с наименьшей суммой элементов.
+возвращает массив из двух элементов: номер строки 
+с наименьшей суммой (нумерация начинается с 0) и саму сумму.
+*/ 
+
+// int[,] matrix = new int[4, 4];
+// FillArrayRandom(matrix);
+// PrintArray(matrix);
+// Console.WriteLine();
+// NumberRowMinSumElements(matrix);
+// void NumberRowMinSumElements(int[,] array)
+// {
+//     int minRow = 0; //Сумма минимальная в строчке
+//     int minSumRow = 0;// номер строки минимальной
+//     int sumRow = 0;// Сумма строки
+//     for (int i = 0; i < matrix.GetLength(1); i++)
+//     {
+//         minRow += matrix[0, i];
+//     }
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++) sumRow += matrix[i, j];
+//         if (sumRow < minRow)
+//         {
+//             minRow = sumRow;
+//             minSumRow = i;
+//         }
+//         sumRow = 0;
+//     }
+//     Console.Write($"{minSumRow + 1} строка, сумма =  {minRow}");
+// }
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void FillArrayRandom(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+
+/*Задача 57
+Составить частотный словарь элементов двумерного массива.
+ Частотный словарь содержит информацию о том, 
+ сколько раз встречается элемент входных данных.
+{ 1, 9, 9, 0, 2, 8, 0, 9 }
+0 встречается 2 раза
+1 встречается 1 раз
+2 встречается 1 раз
+8 встречается 1 раз
+9 встречается 3 раза
+*/
+//int TakeEnteredNumber(string message)
+// {
+//     System.Console.WriteLine(message);
+//     int result = Convert.ToInt32(Console.ReadLine());
+//     return result;
+// }
+// int[,] GetRandom2DArray(int start, int end, int row, int column)
+// {
+//     int[,] array = new int[row, column];
+//     for (int i = 0; i < row; i++)
+//     {
+//         for (int j = 0; j < column; j++)
+//         {
+//             array[i, j] = new Random().Next(start, end + 1);
+//         }
+//     }
+//     return array;
+// }
+// void Print2DArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             System.Console.Write(array[i, j] + "\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+// void PrintCount(int[,] array)
+// {
+//     for (int k = 0; k <= FindMax(array); k++)
+//     {
+//         int count = 0;
+//         for (int i = 0; i < array.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < array.GetLength(1); j++)
+//             {
+
+//                 if (k == array[i, j]) count++;
+//             }
+//         }
+//         System.Console.WriteLine($"Число {k} встречается {count} разa.");
+//     }
+// }
+// int FindMax(int[,] array)
+// {
+//     int max = 0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (array[i, j] > max) max = array[i, j];
+//         }
+//     }
+//     return max;
+// }
+// int userArrayRow = TakeEnteredNumber("Введите количестов строк:");
+// int userArrayColumn = TakeEnteredNumber("Введите количестов столбцов:");
+// int userArrayStart = TakeEnteredNumber("Введите начало диапазона:");
+// int userArrayEnd = TakeEnteredNumber("Введите конец диапазона:");
+// int[,] user2DArray = GetRandom2DArray(userArrayStart, userArrayEnd, userArrayRow, userArrayColumn);
+// Print2DArray(user2DArray);
+// PrintCount(user2DArray); 
+
+/*Задача 58
+Задайте две матрицы. Напишите программу, которая будет
+находить произведение двух матриц.
+*/
+// Console.Write("Укажите количество строк для первой матрицы: ");
+// int rows = int.Parse(Console.ReadLine());
+// Console.Write("Укажите количество столбцов для первой матрицы: ");
+// int cols = int.Parse(Console.ReadLine());
+// Console.Write("Укажите количество строк для второй матрицы: ");
+// int rows2 = int.Parse(Console.ReadLine());
+// Console.Write("Укажите количество столбцов для второй матрицы: ");
+// int cols2 = int.Parse(Console.ReadLine());
+
+// int[,] matrixA = new int[rows, cols];
+// int[,] matrixB = new int[rows2, cols2];
+// int[,] resultArray = new int[rows, cols2];
+
+// FillArray(matrixA);
+// Console.WriteLine("Первый массив:");
+// PrintArray(matrixA);
+
+// FillArray(matrixB);
+// Console.WriteLine("Второй массив:");
+// PrintArray(matrixB);
+
+// MultiplyIfPossible(matrixA, matrixB);
+// resultArray = MatrixMultiplication(matrixA, matrixB);
+
+// Console.WriteLine("Результат умножения матриц:");
+// PrintMatrix(resultArray);
+// void PrintArray(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             Console.Write($"{matrix[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void FillArray(int[,] matrix)
+// {
+//     Random random = new Random();
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = random.Next(1, 10);
+//         }
+//     }
+// }
+
+// void MultiplyIfPossible(int[,] matrixA, int[,] matrixB)
+// {
+//         if (matrixA.GetLength(1) != matrixB.GetLength(0))
+//         {
+//             Console.WriteLine("Нельзя перемножить матрицы");
+//         }
+//         else
+//         {
+//             int[,] resultArray = MatrixMultiplication(matrixA, matrixB);
+//             PrintMatrix(resultArray);
+//         }
+//     }
+
+// int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
+// {
+//     int[,] resultArray = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
+//     for (int i = 0; i < matrixA.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrixB.GetLength(1); j++)
+//         {
+//             resultArray[i, j] = 0;
+//             for (int k = 0; k < matrixA.GetLength(1); k++)
+//             {
+//                 resultArray[i, j] += matrixA[i, k] * matrixB[k, j];
+//             }
+//         }
+//     }
+//     return resultArray;
+// }
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             Console.Write($"{matrix[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+/*Задача 59
+Задайтедвумерный массив из целых чисел.
+Напишите программу, которая удалит строку и столбец, на
+пересечении которых расположен наименьший элемент
+массива.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+5 2 6 7
+Наименьший элемент - 1, на выходе получим
+следующий массив:
+9 4 2
+2 2 6
+3 4 7
+*/
+// Console.Write("Укажите количество строк: ");
+// int rows = int.Parse(Console.ReadLine());
+// Console.Write("Укажите количество столбцов: ");
+// int cols = int.Parse(Console.ReadLine());
+// int[,] arr = new int[rows, cols];
+// FillArray(arr);
+// int minVal = arr[0, 0];
+// int minRow = 0;
+// int minCol = 0;
+// FindMinValue(arr, ref minVal, ref minRow, ref minCol);
+// Console.WriteLine("Исходный массив:");
+// PrintArray(arr);
+// int[,] newArr = RemoveRowAndColumn(arr, minRow, minCol);
+// Console.WriteLine("Массив после удаления:");
+// PrintNewArray(newArr);
+// void PrintArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.Write($"{arr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// void FillArray(int[,] arr)
+// {
+//     Random random = new Random();
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             arr[i, j] = random.Next(1, 10);
+//         }
+//     }
+// }
+// void FindMinValue(int[,] arr, ref int minVal, ref int minRow, ref int minCol)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             if (arr[i, j] < minVal)
+//             {
+//                 minVal = arr[i, j];
+//                 minRow = i;
+//                 minCol = j;
+//             }
+//         }
+//     }
+// }
+
+// int[,] RemoveRowAndColumn(int[,] arr, int rowToRemove, int colToRemove)
+// {
+//     int[,] newArr = new int[arr.GetLength(0) - 1, arr.GetLength(1) - 1];
+//     for (int i = 0, k = 0; i < arr.GetLength(0); i++)
+//     {
+//         if (i == rowToRemove) continue;
+//         for (int j = 0, l = 0; j < arr.GetLength(1); j++)
+//         {
+//             if (j == colToRemove) continue;
+//             newArr[k, l] = arr[i, j];
+//             l++;
+//         }
+//         k++;
+//     }
+//     return newArr;
+// }
+
+// void PrintNewArray(int[,] arr)
+// {
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             Console.Write(arr[i, j] + " ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+/*Задача 60
+Сформируйте трёхмерный массив из неповторяющихся
+двузначных чисел. Напишите программу, которая будет построчно выводить
+массив, добавляя индексы каждого элемента.
+*/ 
+// int[,,] array3D = new int[3, 3, 3];
+
+// void PrintIndex(int[,,] arr)
+// {
+//     for (int i = 0; i < array3D.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array3D.GetLength(1); j++)
+//         {
+//             Console.WriteLine();
+//             for (int k = 0; k < array3D.GetLength(2); k++)
+//             {
+//                 Console.Write($"{array3D[i, j, k]}({i},{j},{k}) ");
+//             }
+//         }
+//     }
+// }
+// void FillArray(int[,,] arr)
+// {
+//     int count = 10;
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < arr.GetLength(2); k++)
+//             {
+//                 arr[k, i, j] += count;
+//                 count += 3;
+//             }
+//         }
+//     }
+// }
+// FillArray(array3D);
+// PrintIndex(array3D);
 
 // Семинар 1
 
@@ -883,9 +2564,69 @@ a = 891 => 81
 
 
 // Задача2.Задайте массив из 10 элементов, заполненный числами из промежутка [-10, 10]. Замените отрица-тельные элементы на положительные, а положительные на отрицательные.
-// Пример
+// Пример МОЙ МЕТОД НЕ РАБОТАЕТ , смотри задачу 32
 // [1 -5 6]
 // => [-1 5 -6]
+
+// Console.Clear();
+// int[] FillArray(int size)
+// {
+//   int[] array = new int[size];
+//   for(int i = 0; i < array.Length;i++)
+// {
+//      array [i] = new Random().Next(-10,10);
+// }
+//      return array;
+// }
+
+// void PrintArray(int[] inArray)
+// {
+//     for(int i = 0; i < inArray.Length; i++)
+//     {
+//         Console.Write(inArray[i] + " ");
+//     }
+//         System.Console.WriteLine();
+// }
+
+// int ChangeElement(int[] arr)
+// {
+//     for(int i = 0; i < arr.Length; i++)
+//     {
+//             arr[i] == arr[i] * -1;
+//     }
+//     return arr2;
+// }
+
+// int LengthArray = 10;
+// int[] arr = FillArray(LengthArray);
+// PrintArray(arr);
+
+// int number = Convert.ToInt32(Console.ReadLine());
+// ChangeElement(arr);
+// PrintArray2(arr2);
+
+ВТОРОЙ СПОСОБ
+
+// Console.Clear();
+
+//   int[] array = new int[10];
+//   for(int i = 0; i < array.Length;i++)
+// {
+//      array [i] = new Random().Next(-10,11);
+// }
+  
+// int[] ChangeElement(int[] array)
+// {
+//     for(int i = 0; i < array.Length; i++)
+//     {
+//             array[i] = array[i]*-1;
+//     }
+//     return array;
+// }
+
+System.Console.WriteLine(string.Join(" ", array));
+ChangeElement(array);
+System.Console.WriteLine(string.Join(" ", array));
 
 // Задача3.Найдите произведения пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новый массив.
 // Пример

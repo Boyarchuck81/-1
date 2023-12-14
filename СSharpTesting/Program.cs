@@ -1,56 +1,45 @@
 ﻿
-// Задача1.Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве. Программа должна выдать ответ: Да/Нет.
-// Примеры
-// [1 3 4 19 3], 8 => Нет
-// [-4 3 4 1], 3 => Да
 
-// Задача2.Задайте массив из 10 элементов, заполненный числами из промежутка [-10, 10]. Замените отрица-тельные элементы на положительные, а положительные на отрицательные.
-// Пример
-// [1 -5 6]
-// => [-1 5 -6]
+// //*
+// Задайте одномерный массив из 123 случайных чисел.
+// Найдите количество элементов массива, значения которых лежат в
+// отрезке [10,99]. 
+// */
 
-Console.Clear();
-int[] FillArray(int size)
+int size = 123;
+int[] array = new int[size];
+int[] GetArray(int size)
 {
-  int[] array = new int[size];
-  for(int i = 0; i < array.Length;i++)
-{
-     array [i] = new Random().Next(-10,10);
-}
-     return array;
-}
-
-void PrintArray(int[] inArray)
-{
-    for(int i = 0; i < inArray.Length; i++)
+    for (int i = 0; i < size; i++)
     {
-        Console.Write(inArray[i] + " ");
+        array[i] = new Random().Next(-99, 99);
     }
-        System.Console.WriteLine();
+    return array;
 }
-
-int ChangeElement(int[] arr)
+void PrintArray(int[] arr)
 {
-    for(int i = 0; i < arr.Length; i++)
+    System.Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
     {
-            arr[i] == arr[i] * -1;
+        System.Console.Write(arr[i]);
+        if (i < arr.Length - 1)
+            System.Console.Write(", ");
     }
-    return arr2;
+    System.Console.WriteLine("]");
 }
-
-void PrintArray2(int[] arr2)
-{
-    for(int i = 0; i < arr2.Length; i++)
+int CountGetArray(int[] arr)
     {
-        Console.Write(arr2[i] + " ");
+        int count = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] >= 10 && arr[i] <= 99)
+            {
+                count++;
+            }
+        }
+        return count;
     }
-        System.Console.WriteLine();
-}
-
-int LengthArray = 10;
-int[] arr = FillArray(LengthArray);
-PrintArray(arr);
-
-int number = Convert.ToInt32(Console.ReadLine());
-ChangeElement(arr);
-PrintArray2(arr2);
+int[] userArray = GetArray(size);
+int countArray = CountGetArray(userArray);
+PrintArray(userArray);
+System.Console.WriteLine("Количество элементов лежащих в отрезке :" + countArray);
